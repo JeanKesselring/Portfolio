@@ -1,0 +1,3 @@
+Omakase is a sushi-themed card game I designed and developed as an original game project. Players collect valuable sushi combinations, use action cards to disrupt opponents, and compete to build the highest-scoring hand. The project involved game design, rule balancing, theme development, and creating a playful visual identity around Japanese food culture.
+
+https://omakasegame.com/

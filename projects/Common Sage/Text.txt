@@ -1,0 +1,3 @@
+CommonSage is an AI-powered educational content platform that transforms lecture materials into structured learning resources such as summaries, quizzes, flashcards, audio, and short-form videos. I designed it to help make academic content more accessible, engaging, and easier to study across different university courses.
+
+https://www.commonsage.ch/
