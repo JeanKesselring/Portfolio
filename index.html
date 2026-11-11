@@ -4,15 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jean Kesselring — Portfolio</title>
-  <meta name="description" content="Portfolio of Jean Kesselring — Designer, Developer & Illustrator">
+  <meta name="description" content="Portfolio of Jean Kesselring — designer, developer and illustrator working across interactive installations, games, learning tools, scientific visualization and illustration.">
   <meta name="theme-color" content="#0d0d0d">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d0d0d'/%3E%3Ctext x='16' y='23' font-size='17' font-family='monospace' font-weight='700' fill='%23f0ede8' text-anchor='middle'%3EJK%3C/text%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jean Kesselring — Portfolio">
+  <meta property="og:description" content="Designer · Developer · Illustrator. Interactive installations, games, learning tools, scientific visualization and illustration.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d0d0d'/%3E%3Ctext x='16' y='21' font-size='13' font-family='monospace' font-weight='700' fill='%23f0ede8' text-anchor='middle'%3EJK%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Space+Grotesk:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
+
+  <a class="skip-link" href="#into-the-brain">Skip to work</a>
 
   <!-- Grain texture overlay -->
   <div class="grain" aria-hidden="true"></div>
@@ -20,7 +25,7 @@
   <!-- Scroll progress indicator -->
   <div class="progress-bar" id="progress" aria-hidden="true"></div>
 
-  <!-- Custom cursor -->
+  <!-- Custom cursor (enabled by JS on fine pointers only) -->
   <div class="cursor" id="cursor" aria-hidden="true"></div>
   <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
@@ -28,16 +33,18 @@
   <nav id="nav" aria-label="Section navigation">
     <a class="nav-logo" href="#hero" aria-label="Back to top">JK</a>
     <div class="nav-links">
-      <a href="#into-the-brain" aria-label="Into the Brain">01</a>
-      <a href="#zauberpark"     aria-label="Zauberpark">02</a>
-      <a href="#omakase"        aria-label="Omakase">03</a>
-      <a href="#common-sage"    aria-label="Common Sage">04</a>
-      <a href="#wave-series"    aria-label="Wave Series">05</a>
-      <a href="#onsen"          aria-label="Onsen">06</a>
-      <a href="#commission"     aria-label="Commission Work">07</a>
-      <a href="#personal"       aria-label="Personal Work">08</a>
+      <a href="#into-the-brain" data-label="Into the Brain">01</a>
+      <a href="#animations" data-label="Animations">02</a>
+      <a href="#zauberpark" data-label="Zauberpark">03</a>
+      <a href="#omakase" data-label="Omakase">04</a>
+      <a href="#mindblob" data-label="mindblob">05</a>
+      <a href="#wave-series" data-label="Wave Series">06</a>
+      <a href="#onsen" data-label="Onsen">07</a>
+      <a href="#illustrations" data-label="Illustrations">08</a>
     </div>
   </nav>
+
+  <main>
 
   <!-- ===== HERO ===== -->
   <section id="hero">
@@ -50,28 +57,28 @@
       <p class="hero-eyebrow mono">Designer · Developer · Illustrator</p>
       <h1 class="hero-name">
         <span class="h-line">Jean</span>
-        <span class="h-line gradient-text">Kesselring</span>
+        <span class="h-line"><span class="gradient-text">Kesselring</span></span>
       </h1>
-      <p class="hero-desc h-fade">I make things that live at the intersection of design, code, and image — from interactive installations and card games to scientific visualizations and hand-drawn illustration.</p>
-      <span class="scroll-hint mono h-fade">↓ scroll to explore</span>
+      <p class="hero-desc h-fade">I make things that live at the intersection of design, code, and image — from interactive installations, card games and learning tools to scientific visualizations and hand-drawn illustration.</p>
+      <a class="scroll-hint mono h-fade" href="#into-the-brain">↓ scroll to explore</a>
     </div>
-    <div class="hero-count mono h-fade" aria-label="8 works">
-      <span class="count-num">08</span>
+    <div class="hero-count mono h-fade">
+      <span class="count-num" id="countNum">08</span>
       <span>works</span>
     </div>
   </section>
 
   <!-- ===== 01 INTO THE BRAIN ===== -->
-  <section class="project" id="into-the-brain" style="--accent:#a78bfa" data-num="01">
+  <section class="project" id="into-the-brain" style="--accent:#a78bfa" data-num="01" aria-labelledby="t-brain">
     <div class="project-inner">
       <header class="project-header">
         <span class="project-num mono">01</span>
         <div class="project-title-wrap">
-          <h2 class="project-title">Into the <br>Brain</h2>
-          <span class="project-tag mono">Scientific Viz · Web · ZHdK</span>
+          <h2 class="project-title" id="t-brain">Into the <br>Brain</h2>
+          <span class="project-tag mono">Scientific Viz · Web · ZHdK · 2020</span>
         </div>
         <a class="project-link" href="https://jeankesselring.github.io/into_the_brain/" target="_blank" rel="noopener noreferrer">
-          Explore ↗
+          Explore <span aria-hidden="true">↗</span>
         </a>
       </header>
       <div class="project-body two-col">
@@ -82,24 +89,58 @@
         </div>
         <div class="project-media">
           <div class="media-grid grid-brain">
-            <img class="media-item reveal" src="projects/Into%20the%20Brain/Images/2.jpg" alt="Brain visualization macro scale" loading="lazy">
-            <img class="media-item reveal" src="projects/Into%20the%20Brain/Images/7.jpg" alt="Brain visualization mid scale" loading="lazy">
-            <img class="media-item reveal" src="projects/Into%20the%20Brain/Images/11.jpg" alt="Brain visualization micro scale" loading="lazy">
-            <img class="media-item reveal" src="projects/Into%20the%20Brain/Images/Entire%20ampareceptor.jpg" alt="AMPA receptor visualization" loading="lazy">
+            <img class="media-item reveal wide" src="media/into-the-brain/2.webp" width="2560" height="1440" alt="Into the Brain — macroscopic view of the human brain" loading="lazy" decoding="async">
+            <img class="media-item reveal tall" src="media/into-the-brain/ampa-receptor.webp" width="1148" height="1410" alt="Into the Brain — molecular model of an AMPA receptor" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/into-the-brain/7.webp" width="2560" height="1440" alt="Into the Brain — mid-scale view of neural tissue" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/into-the-brain/11.webp" width="2560" height="1440" alt="Into the Brain — microscopic view of neurons" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 02 ZAUBERPARK ===== -->
-  <section class="project" id="zauberpark" style="--accent:#22d3ee" data-num="02">
+  <!-- ===== 02 ANIMATIONS ===== -->
+  <section class="project" id="animations" style="--accent:#fbbf24" data-num="02" aria-labelledby="t-animations">
     <div class="project-inner">
       <header class="project-header">
         <span class="project-num mono">02</span>
         <div class="project-title-wrap">
-          <h2 class="project-title">Zauberpark <br>Installation</h2>
-          <span class="project-tag mono">Interactive · Sound · Projection Mapping</span>
+          <h2 class="project-title" id="t-animations">Animations</h2>
+          <span class="project-tag mono">3D Animation · Motion Graphics · Scientific Viz</span>
+        </div>
+      </header>
+      <p class="project-desc-solo">3D and 2D animation — from scientific visualization and architectural reconstruction to motion graphics, commissioned and personal.</p>
+      <div class="gallery">
+        <div class="horizontal-scroll-wrap drag-scroll" tabindex="0" aria-label="Animations gallery">
+          <div class="horizontal-scroll">
+            <video class="media-item reveal video-auto" src="media/animation/motion-2.mp4" poster="media/animation/motion-2.webp" width="1920" height="1080" muted loop playsinline preload="none" aria-label="3D animation of DNA"></video>
+            <video class="media-item reveal video-auto" src="media/animation/neurons.mp4" poster="media/animation/neurons.webp" width="1920" height="1080" muted loop playsinline preload="none" aria-label="Neurons — 3D animation"></video>
+            <video class="media-item reveal video-auto" src="media/animation/reel.mp4" poster="media/animation/reel.webp" width="1920" height="1080" muted loop playsinline preload="none" aria-label="3D animation reel"></video>
+            <video class="media-item reveal video-auto" src="media/animation/roman-bathhouse.mp4" poster="media/animation/roman-bathhouse.webp" width="1920" height="1080" muted loop playsinline preload="none" aria-label="Roman bathhouse in Elgg — 3D reconstruction"></video>
+            <video class="media-item reveal video-auto" src="media/animation/motion-1.mp4" poster="media/animation/motion-1.webp" width="1920" height="1080" muted loop playsinline preload="none" aria-label="Illustrated motion graphics piece"></video>
+            <video class="media-item reveal video-auto" src="media/animation/anim-1.mp4" poster="media/animation/anim-1.webp" width="768" height="1024" muted loop playsinline preload="none" aria-label="Animated illustration"></video>
+            <img class="media-item reveal" src="media/animation/psychopompos.webp" width="632" height="1000" alt="Book cover for Psychopompos" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="gallery-controls">
+          <p class="mono">drag or scroll</p>
+          <div>
+            <button class="gallery-btn" data-dir="-1" aria-label="Scroll gallery left">←</button>
+            <button class="gallery-btn" data-dir="1" aria-label="Scroll gallery right">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 ZAUBERPARK ===== -->
+  <section class="project" id="zauberpark" style="--accent:#22d3ee" data-num="03" aria-labelledby="t-zauber">
+    <div class="project-inner">
+      <header class="project-header">
+        <span class="project-num mono">03</span>
+        <div class="project-title-wrap">
+          <h2 class="project-title" id="t-zauber">Zauberpark <br>Installation</h2>
+          <span class="project-tag mono">Interactive · Sound · Projection Mapping · 2023</span>
         </div>
       </header>
       <div class="project-body two-col">
@@ -108,23 +149,23 @@
           <p>Up to four visitors could engage with the installation simultaneously, generating animations and soundscapes through their movement and position.</p>
         </div>
         <div class="project-media">
-          <video class="media-item reveal full-video" src="projects/Interactive%20Project/Timeline%201%20-%20V2.mov" muted loop playsinline controls></video>
+          <video class="full-video reveal" src="media/zauberpark/installation.mp4" poster="media/zauberpark/installation.webp" width="1920" height="1080" controls playsinline preload="metadata" aria-label="Video documentation of the Zauberpark installation"></video>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 03 OMAKASE ===== -->
-  <section class="project" id="omakase" style="--accent:#fb923c" data-num="03">
+  <!-- ===== 04 OMAKASE ===== -->
+  <section class="project" id="omakase" style="--accent:#fb923c" data-num="04" aria-labelledby="t-omakase">
     <div class="project-inner">
       <header class="project-header">
-        <span class="project-num mono">03</span>
+        <span class="project-num mono">04</span>
         <div class="project-title-wrap">
-          <h2 class="project-title">Omakase</h2>
+          <h2 class="project-title" id="t-omakase">Omakase</h2>
           <span class="project-tag mono">Card Game Design · Illustration · 3D Animation</span>
         </div>
         <a class="project-link" href="https://omakasegame.com/" target="_blank" rel="noopener noreferrer">
-          Visit ↗
+          Visit <span aria-hidden="true">↗</span>
         </a>
       </header>
       <div class="project-body two-col">
@@ -135,174 +176,196 @@
         </div>
         <div class="project-media">
           <div class="media-grid grid-omakase">
-            <video class="media-item reveal video-auto span-2" src="projects/Omakase/Images/Comp%203_3.mp4" muted loop playsinline></video>
-            <img class="media-item reveal" src="projects/Omakase/Images/post.png" alt="Omakase social post" loading="lazy">
-            <img class="media-item reveal" src="projects/Omakase/Images/post2.png" alt="Omakase social post 2" loading="lazy">
-            <img class="media-item reveal" src="projects/Omakase/Images/post3.png" alt="Omakase social post 3" loading="lazy">
-            <video class="media-item reveal video-auto" src="projects/Omakase/Images/Comp_1.mp4" muted loop playsinline></video>
-            <img class="media-item reveal span-2" src="projects/Omakase/Images/DSC06800.png" alt="Omakase card game physical copy" loading="lazy">
+            <video class="media-item reveal video-auto tall" src="media/omakase/anim-1.mp4" poster="media/omakase/anim-1.webp" width="1080" height="1920" muted loop playsinline preload="none" aria-label="Omakase 3D card animation"></video>
+            <img class="media-item reveal" src="media/omakase/post-1.webp" width="1600" height="1600" alt="Omakase social media post" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/omakase/post-2.webp" width="1600" height="1600" alt="Omakase social media post" loading="lazy" decoding="async">
+            <video class="media-item reveal video-auto tall" src="media/omakase/anim-2.mp4" poster="media/omakase/anim-2.webp" width="1080" height="1920" muted loop playsinline preload="none" aria-label="Omakase card animation"></video>
+            <img class="media-item reveal" src="media/omakase/post-3.webp" width="1600" height="1600" alt="Omakase social media post" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/omakase/box.webp" width="2000" height="2000" alt="Physical copy of the Omakase card game" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== 04 COMMON SAGE ===== -->
-  <section class="project" id="common-sage" style="--accent:#4ade80" data-num="04">
-    <div class="project-inner">
-      <header class="project-header">
-        <span class="project-num mono">04</span>
-        <div class="project-title-wrap">
-          <h2 class="project-title">Common <br>Sage</h2>
-          <span class="project-tag mono">AI · Education · UX Design</span>
-        </div>
-        <a class="project-link" href="https://www.commonsage.ch/" target="_blank" rel="noopener noreferrer">
-          Visit Site ↗
-        </a>
-      </header>
-      <div class="project-body two-col">
-        <div class="project-desc">
-          <p>CommonSage is an AI-powered educational content platform that transforms lecture materials into structured learning resources such as summaries, quizzes, flashcards, audio, and short-form videos.</p>
-          <p>I designed it to help make academic content more accessible, engaging, and easier to study across different university courses.</p>
-          <a class="inline-link" href="https://www.commonsage.ch/" target="_blank" rel="noopener noreferrer">commonsage.ch ↗</a>
-        </div>
-        <div class="project-media">
-          <div class="media-grid grid-2">
-            <img class="media-item reveal" src="projects/Common%20Sage/Images/Group%20141.png" alt="Common Sage interface overview" loading="lazy">
-            <img class="media-item reveal" src="projects/Common%20Sage/Images/Summary.png" alt="Common Sage summary feature" loading="lazy">
-            <img class="media-item span-2 reveal" src="projects/Common%20Sage/Images/UI.png" alt="Common Sage full UI" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 05 WAVE SERIES ===== -->
-  <section class="project" id="wave-series" style="--accent:#60a5fa" data-num="05">
+  <!-- ===== 05 MINDBLOB ===== -->
+  <section class="project project-featured" id="mindblob" style="--accent:#6ec6f5" data-num="05" aria-labelledby="t-mindblob">
     <div class="project-inner">
       <header class="project-header">
         <span class="project-num mono">05</span>
         <div class="project-title-wrap">
-          <h2 class="project-title">Wave <br>Series</h2>
-          <span class="project-tag mono">Painting · Series · Illustration</span>
+          <h2 class="project-title" id="t-mindblob">mindblob</h2>
+          <span class="project-tag mono">Learning Platform · Knowledge Graphs · AI · Product Design</span>
         </div>
       </header>
-      <p class="project-desc-solo">A series of paintings exploring the motion, texture, and energy of waves.</p>
-      <div class="horizontal-scroll-wrap drag-scroll">
-        <div class="horizontal-scroll">
-          <img class="media-item reveal" src="projects/Wave%20Series/IMG_0685.JPG" alt="Wave Series 1" loading="lazy">
-          <img class="media-item reveal" src="projects/Wave%20Series/IMG_0686.JPG" alt="Wave Series 2" loading="lazy">
-          <img class="media-item reveal" src="projects/Wave%20Series/IMG_0687.JPG" alt="Wave Series 3" loading="lazy">
-          <img class="media-item reveal" src="projects/Wave%20Series/IMG_0688.JPG" alt="Wave Series 4" loading="lazy">
-          <img class="media-item reveal" src="projects/Wave%20Series/IMG_0689.JPG" alt="Wave Series 5" loading="lazy">
-          <img class="media-item reveal" src="projects/Wave%20Series/IMG_0690.JPG" alt="Wave Series 6" loading="lazy">
-          <img class="media-item reveal" src="projects/Wave%20Series/IMG_0691.JPG" alt="Wave Series 7" loading="lazy">
-          <img class="media-item reveal" src="projects/Wave%20Series/IMG_0692.JPG" alt="Wave Series 8" loading="lazy">
+      <div class="project-body two-col">
+        <div class="project-desc">
+          <p class="lead">A learning environment built on a knowledge graph — so you always see where a topic sits, what it builds on, and what to practise next.</p>
+          <p>mindblob turns course material — lecture slides, recordings and web sources — into a structured graph of connected concepts. From that graph it generates learning resources such as summaries, quizzes, flashcards, audio and short videos, and tracks mastery concept by concept.</p>
+          <p>Learners can explore topics spatially, nested inside one another, and practise across connected skills. Educators get a teaching view to shape courses, inspect the learner experience and improve what needs attention.</p>
+          <ul class="feature-list mono">
+            <li><span>Graph</span>Courses as maps of connected concepts</li>
+            <li><span>Practice</span>Mastery tracked per concept and skill</li>
+            <li><span>Formats</span>Summaries, quizzes, flashcards, audio, video</li>
+            <li><span>Teaching</span>Create, review and improve courses</li>
+          </ul>
+          <p class="note">One example course takes learners from kana through JLPT&nbsp;N1 Japanese across more than 10,000 concepts. mindblob grew out of <em>CommonSage</em>, my earlier AI study tool for university courses.</p>
+        </div>
+        <div class="project-media">
+          <div class="media-grid grid-mindblob">
+            <figure class="media-item reveal wide shot">
+              <img src="media/mindblob/course.webp" width="1664" height="929" alt="mindblob course overview: a Japanese JLPT N5–N1 course with mastery progress across kana, kanji, vocabulary and grammar" loading="lazy" decoding="async">
+              <figcaption class="mono">Course overview</figcaption>
+            </figure>
+            <figure class="media-item reveal tall diagram">
+              <img src="media/mindblob/pipeline.webp" width="765" height="1109" alt="Diagram: lecture slides, web sources and recordings are processed into a structured knowledge graph, which generates videos, audio, summaries, quizzes and flashcards" loading="lazy" decoding="async">
+              <figcaption class="mono">How it works</figcaption>
+            </figure>
+            <figure class="media-item reveal shot">
+              <img src="media/mindblob/knowledge-map.webp" width="1903" height="992" alt="mindblob knowledge map: nested topics such as life sciences, computing, earth systems and society laid out as a spatial field" loading="lazy" decoding="async">
+              <figcaption class="mono">Knowledge map</figcaption>
+            </figure>
+            <figure class="media-item reveal shot">
+              <img src="media/mindblob/teaching.webp" width="1637" height="890" alt="mindblob teaching dashboard listing courses with their visibility and status" loading="lazy" decoding="async">
+              <figcaption class="mono">Teaching</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
-      <p class="scroll-hint-h mono" aria-hidden="true">← drag to scroll →</p>
     </div>
   </section>
 
-  <!-- ===== 06 ONSEN ===== -->
-  <section class="project" id="onsen" style="--accent:#f472b6" data-num="06">
+  <!-- ===== 06 WAVE SERIES ===== -->
+  <section class="project" id="wave-series" style="--accent:#818cf8" data-num="06" aria-labelledby="t-wave">
     <div class="project-inner">
       <header class="project-header">
         <span class="project-num mono">06</span>
         <div class="project-title-wrap">
-          <h2 class="project-title">Onsen</h2>
-          <span class="project-tag mono">Illustration · Series · Slice of life</span>
+          <h2 class="project-title" id="t-wave">Wave <br>Series</h2>
+          <span class="project-tag mono">Painting · Series · Illustration</span>
         </div>
       </header>
-      <p class="project-desc-solo">A series of illustrations inspired by Japanese onsen culture. Warmth, community, and quiet moments.</p>
-      <div class="horizontal-scroll-wrap drag-scroll">
-        <div class="horizontal-scroll">
-          <img class="media-item reveal" src="projects/Onsen%20Illustrations/IMG_0678.JPG" alt="Onsen illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Onsen%20Illustrations/IMG_0694.JPG" alt="Onsen illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Onsen%20Illustrations/IMG_0695.JPG" alt="Onsen illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Onsen%20Illustrations/IMG_0696.JPG" alt="Onsen illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Onsen%20Illustrations/IMG_0697.JPG" alt="Onsen illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Onsen%20Illustrations/IMG_0698.JPG" alt="Onsen illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Onsen%20Illustrations/IMG_0699.JPG" alt="Onsen illustration" loading="lazy">
+      <p class="project-desc-solo">A series of paintings exploring the motion, texture, and energy of waves.</p>
+      <div class="gallery">
+        <div class="horizontal-scroll-wrap drag-scroll" tabindex="0" aria-label="Wave Series gallery">
+          <div class="horizontal-scroll">
+            <img class="media-item reveal" src="media/wave-series/0685.webp" width="4000" height="3000" alt="Wave Series, painting 1 of 8" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/wave-series/0686.webp" width="4000" height="3000" alt="Wave Series, painting 2 of 8" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/wave-series/0687.webp" width="4000" height="3000" alt="Wave Series, painting 3 of 8" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/wave-series/0688.webp" width="3000" height="4000" alt="Wave Series, painting 4 of 8" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/wave-series/0689.webp" width="3000" height="4000" alt="Wave Series, painting 5 of 8" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/wave-series/0690.webp" width="3000" height="4000" alt="Wave Series, painting 6 of 8" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/wave-series/0691.webp" width="3000" height="3000" alt="Wave Series, painting 7 of 8" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/wave-series/0692.webp" width="4000" height="3000" alt="Wave Series, painting 8 of 8" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="gallery-controls">
+          <p class="mono">drag or scroll</p>
+          <div>
+            <button class="gallery-btn" data-dir="-1" aria-label="Scroll gallery left">←</button>
+            <button class="gallery-btn" data-dir="1" aria-label="Scroll gallery right">→</button>
+          </div>
         </div>
       </div>
-      <p class="scroll-hint-h mono" aria-hidden="true">← drag to scroll →</p>
     </div>
   </section>
 
-  <!-- ===== 07 COMMISSION WORK ===== -->
-  <section class="project" id="commission" style="--accent:#fbbf24" data-num="07">
+  <!-- ===== 07 ONSEN ===== -->
+  <section class="project" id="onsen" style="--accent:#f472b6" data-num="07" aria-labelledby="t-onsen">
     <div class="project-inner">
       <header class="project-header">
         <span class="project-num mono">07</span>
         <div class="project-title-wrap">
-          <h2 class="project-title">Commission<br>Work</h2>
-          <span class="project-tag mono">Motion · Album Art · Visual Design</span>
+          <h2 class="project-title" id="t-onsen">Onsen</h2>
+          <span class="project-tag mono">Illustration · Series · Slice of life</span>
         </div>
       </header>
-      <p class="project-desc-solo">Selected commissioned projects including motion graphics, album artwork, and cover design.</p>
-      <div class="horizontal-scroll-wrap drag-scroll">
-        <div class="horizontal-scroll">
-          <video class="media-item reveal video-auto" src="projects/Commission_work/12.12.23.mp4" muted loop playsinline></video>
-          <img class="media-item reveal" src="projects/Commission_work/livia%20album%20cover%203.jpg" alt="Livia album cover" loading="lazy">
-          <img class="media-item reveal" src="projects/Commission_work/IMG_0693.JPG" alt="Commission work" loading="lazy">
-          <img class="media-item reveal" src="projects/Commission_work/livia%20album%20cover%2033.jpg" alt="Livia album cover variant" loading="lazy">
-          <img class="media-item reveal" src="projects/Commission_work/psychopompos-9783257615579.jpg" alt="Psychopompos cover" loading="lazy">
-          <img class="media-item reveal" src="projects/Commission_work/IMG_0702.JPG" alt="Commission work" loading="lazy">
-          <video class="media-item reveal video-auto" src="projects/Commission_work/15_3_Final_version.mp4" muted loop playsinline></video>
+      <p class="project-desc-solo">A series of illustrations inspired by Japanese onsen culture. Warmth, community, and quiet moments.</p>
+      <div class="gallery">
+        <div class="horizontal-scroll-wrap drag-scroll" tabindex="0" aria-label="Onsen gallery">
+          <div class="horizontal-scroll">
+            <img class="media-item reveal" src="media/onsen/0678.webp" width="2048" height="2732" alt="Onsen illustration 1 of 7" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/onsen/0694.webp" width="2732" height="2010" alt="Onsen illustration 2 of 7" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/onsen/0695.webp" width="3000" height="4000" alt="Onsen illustration 3 of 7" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/onsen/0696.webp" width="3000" height="4000" alt="Onsen illustration 4 of 7" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/onsen/0697.webp" width="1899" height="2699" alt="Onsen illustration 5 of 7" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/onsen/0698.webp" width="1206" height="2048" alt="Onsen illustration 6 of 7" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/onsen/0699.webp" width="2732" height="2048" alt="Onsen illustration 7 of 7" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="gallery-controls">
+          <p class="mono">drag or scroll</p>
+          <div>
+            <button class="gallery-btn" data-dir="-1" aria-label="Scroll gallery left">←</button>
+            <button class="gallery-btn" data-dir="1" aria-label="Scroll gallery right">→</button>
+          </div>
         </div>
       </div>
-      <p class="scroll-hint-h mono" aria-hidden="true">← drag to scroll →</p>
     </div>
   </section>
 
-  <!-- ===== 08 PERSONAL WORK ===== -->
-  <section class="project" id="personal" style="--accent:#e879f9" data-num="08">
+  <!-- ===== 08 ILLUSTRATIONS ===== -->
+  <section class="project" id="illustrations" style="--accent:#e879f9" data-num="08" aria-labelledby="t-illustrations">
     <div class="project-inner">
       <header class="project-header">
         <span class="project-num mono">08</span>
         <div class="project-title-wrap">
-          <h2 class="project-title">Personal<br>Work</h2>
-          <span class="project-tag mono">Illustration · Animation · Experiments</span>
+          <h2 class="project-title" id="t-illustrations">Illustrations</h2>
+          <span class="project-tag mono">Illustration · Album Art · Commissions</span>
         </div>
       </header>
-      <p class="project-desc-solo">Personal illustration work spanning hand-drawn pieces and animated experiments.</p>
-      <div class="horizontal-scroll-wrap drag-scroll">
-        <div class="horizontal-scroll">
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0675.JPG" alt="Personal illustration" loading="lazy">
-          <video class="media-item reveal video-auto" src="projects/Personal_Illustratoions/thisone_2.mp4" muted loop playsinline></video>
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0677.JPG" alt="Personal illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0679.JPG" alt="Personal illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0680.JPG" alt="Personal illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0681.JPG" alt="Personal illustration" loading="lazy">
-          <video class="media-item reveal video-auto" src="projects/Personal_Illustratoions/Neurons.mp4" muted loop playsinline></video>
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0682.JPG" alt="Personal illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0683.JPG" alt="Personal illustration" loading="lazy">
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0700.JPG" alt="Personal illustration" loading="lazy">
-          <video class="media-item reveal video-auto" src="projects/Personal_Illustratoions/RomanBathhouse.mp4" muted loop playsinline></video>
-          <img class="media-item reveal" src="projects/Personal_Illustratoions/IMG_0701.JPG" alt="Personal illustration" loading="lazy">
+      <p class="project-desc-solo">Hand-drawn and digital illustration — personal pieces, commissioned work and album artwork.</p>
+      <div class="gallery">
+        <div class="horizontal-scroll-wrap drag-scroll" tabindex="0" aria-label="Illustrations gallery">
+          <div class="horizontal-scroll">
+            <img class="media-item reveal" src="media/illustration/0675.webp" width="2048" height="2732" alt="Illustration" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/livia-cover-1.webp" width="3543" height="3543" alt="Album cover artwork for Livia" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0677.webp" width="2048" height="2732" alt="Illustration" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0693.webp" width="5353" height="3986" alt="Illustration" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0679.webp" width="2048" height="2732" alt="Illustration" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0680.webp" width="4504" height="2048" alt="Illustration, panorama" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/livia-cover-2.webp" width="3543" height="3543" alt="Alternative album cover artwork for Livia" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0681.webp" width="2305" height="1497" alt="Illustration" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0682.webp" width="2048" height="2732" alt="Illustration" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0702.webp" width="2500" height="2500" alt="Illustration" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0683.webp" width="5324" height="3000" alt="Illustration, panorama" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0700.webp" width="2048" height="2732" alt="Illustration" loading="lazy" decoding="async">
+            <img class="media-item reveal" src="media/illustration/0701.webp" width="2296" height="3143" alt="Illustration" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="gallery-controls">
+          <p class="mono">drag or scroll</p>
+          <div>
+            <button class="gallery-btn" data-dir="-1" aria-label="Scroll gallery left">←</button>
+            <button class="gallery-btn" data-dir="1" aria-label="Scroll gallery right">→</button>
+          </div>
         </div>
       </div>
-      <p class="scroll-hint-h mono" aria-hidden="true">← drag to scroll →</p>
     </div>
   </section>
+
+  </main>
 
   <!-- ===== FOOTER ===== -->
   <footer id="footer">
     <div class="footer-inner">
-      <p class="mono">© 2024 Jean Kesselring</p>
-      <a class="footer-link" href="https://github.com/jeankesselring" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <p class="mono">© <span id="year">2026</span> Jean Kesselring</p>
+      <div class="footer-links">
+        <a class="footer-link" href="https://github.com/jeankesselring" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a class="footer-link" href="#hero">Back to top ↑</a>
+      </div>
     </div>
   </footer>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-    <div class="lightbox-content">
-      <img id="lightboxImg" src="" alt="">
-    </div>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer" hidden>
+    <button class="lightbox-btn lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <button class="lightbox-btn lightbox-prev" id="lightboxPrev" aria-label="Previous">←</button>
+    <button class="lightbox-btn lightbox-next" id="lightboxNext" aria-label="Next">→</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+    <p class="lightbox-caption mono" id="lightboxCaption"></p>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
